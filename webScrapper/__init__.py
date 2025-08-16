@@ -7,6 +7,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)  # headless=True en serverless
+        #Comment to try
         page = browser.new_page()
         page.goto("https://listado.mercadolibre.com.pe/bicicletas#D[A:bicicletas]")
 
