@@ -1,12 +1,12 @@
 {
+  "scriptFile": "index.js",
   "bindings": [
     {
-      "authLevel": "anonymous",
+      "authLevel": "function",
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
-      "methods": [ "get" ],
-      "route": "scrape-titles"
+      "methods": ["get", "post"]
     },
     {
       "type": "http",
