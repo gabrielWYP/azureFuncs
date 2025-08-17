@@ -36,7 +36,6 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
-          npx playwright@1.47.0 install --with-deps chromium
           popd
 
       - name: Upload artifact for deployment job

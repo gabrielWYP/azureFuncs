@@ -1,4 +1,4 @@
-const { chromium } = require("playwright-chromium");
+const { chromium } = require("playwright-core");
 
 module.exports = async function (context, req) {
   context.log("HTTP trigger function processed a request.");
@@ -7,7 +7,14 @@ module.exports = async function (context, req) {
   let browser;
 
   try {
-    browser = await chromium.launch({ headless: true }); // en serverless siempre headless
+    // Edge/Chromium instalado en Azure App Service
+    const executablePath = 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
+
+    browser = await chromium.launch({
+      executablePath,
+      headless: true // siempre headless en serverless
+    });
+
     const page = await browser.newPage();
 
     await page.goto("https://listado.mercadolibre.com.pe/bicicletas#D[A:bicicletas]");
