@@ -1,21 +1,14 @@
 {
   "name": "mercadolibre-scraper",
   "version": "1.0.0",
-  "description": "Scraper de MercadoLibre con Playwright-Chromium en Azure Functions",
-  "author": "Gabriel",
-  "license": "ISC",
+  "description": "Scraper de MercadoLibre con Playwright en Azure Functions",
   "scripts": {
     "start": "func start",
-    "dev": "node index.js",
-    "postinstall": "npx playwright install chromium"
+    "postinstall": "npx playwright install --with-deps chromium"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "playwright-chromium": "^1.47.0"
-  },
-  "devDependencies": {
-    "azure-functions-core-tools": "^4.0.5455"
-  },
-  "engines": {
-    "node": ">=18.x"
   }
 }
