@@ -1,4 +1,5 @@
 const { chromium } = require("playwright-core");
+const chromiumPortable = require("@sparticuz/chromium");
 
 module.exports = async function (context, req) {
   context.log("HTTP trigger function processed a request.");
@@ -7,16 +8,13 @@ module.exports = async function (context, req) {
   let browser;
 
   try {
-    // Edge/Chromium instalado en Azure App Service
-    const executablePath = 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
-
     browser = await chromium.launch({
-      executablePath,
-      headless: true // siempre headless en serverless
+      executablePath: chromiumPortable.path, // Chromium portable dentro de node_modules
+      headless: true,
+      args: chromiumPortable.args // flags recomendados para serverless
     });
 
     const page = await browser.newPage();
-
     await page.goto("https://listado.mercadolibre.com.pe/bicicletas#D[A:bicicletas]");
 
     // espera a que carguen los ítems

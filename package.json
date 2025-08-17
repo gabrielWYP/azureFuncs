@@ -8,6 +8,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "playwright-core": "^1.47.0"
+    "@sparticuz/chromium": "113.0",
+    "playwright-core": "^1.54.2"
   }
 }
