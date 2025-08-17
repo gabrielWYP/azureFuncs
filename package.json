@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Scraper de MercadoLibre con Playwright en Azure Functions",
   "scripts": {
-    "start": "func start"
+    "start": "func start",
+    "postinstall": "npx playwright install --with-deps chromium"
   },
   "author": "",
   "license": "ISC",
